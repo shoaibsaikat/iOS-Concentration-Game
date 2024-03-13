@@ -15,7 +15,7 @@ class Concentration {
     }
     
     init(cardPair: Int) {
-        for _ in 0..<cardPair {
+        for _ in 0 ..< cardPair {
             let card = Card(id: Card.getUniqueId())
             cards += [card, card]
         }
