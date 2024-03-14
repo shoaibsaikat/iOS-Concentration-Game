@@ -46,7 +46,10 @@ class ViewController: UIViewController {
             } else {
                 button.backgroundColor = UIColor.orange
                 button.setTitle("", for: UIControl.State.normal)
-
+            }
+            if card.matched {
+                button.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
+                button.setTitle("", for: UIControl.State.normal)
             }
         }
     }
