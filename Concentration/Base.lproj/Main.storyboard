@@ -147,6 +147,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4uW-p3-Lma" secondAttribute="trailing" constant="20" id="4lm-jw-l2Q"/>
                             <constraint firstItem="4uW-p3-Lma" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="4ye-Fp-LLw"/>
                             <constraint firstItem="caJ-2h-QuJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Guf-yi-Slw"/>
+                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4uW-p3-Lma" secondAttribute="bottom" constant="8" symbolic="YES" id="U5O-xn-QBy"/>
                             <constraint firstItem="4uW-p3-Lma" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rNJ-KK-QhJ"/>
                         </constraints>
                     </view>
@@ -168,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1470" y="-1347"/>
+            <point key="canvasLocation" x="-1357" y="-1621"/>
         </scene>
     </scenes>
     <resources>
