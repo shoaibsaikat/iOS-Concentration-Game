@@ -10,9 +10,9 @@ import Foundation
 struct Card {
     var faceUp = false
     var matched = false
-    var id: Int
+    private(set) var id: Int
     
-    static var uniqueId = 0
+    private static var uniqueId = 0
     
     static func getUniqueId() -> Int {
         uniqueId += 1

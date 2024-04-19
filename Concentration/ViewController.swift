@@ -9,24 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var game = Concentration(cardPair: (cardButtons.count + 1) / 2)
+    private lazy var game = Concentration(cardPair: cardPairs)
     
-    var countTouch = 0 {
+    private var cardPairs: Int {
+        return (cardButtons.count + 1) / 2
+    }
+    
+    private var countTouch = 0 {
         didSet {
             countLabel.text = "Flip: \(countTouch)"
         }
     }
     
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet private weak var countLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         if let index = cardButtons.lastIndex(of: sender) {
             game.selectCard(at: index)
             updateCard();
@@ -35,7 +39,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateCard() {
+    private func updateCard() {
         countTouch += 1
         for index in cardButtons.indices {
             let card = game.cards[index]
@@ -54,11 +58,11 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojis = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚" ]
+    private var emojis = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚" ]
     
-    var emoji = [Int: String]()
+    private var emoji = [Int: String]()
     
-    func emoji(for card: Card) -> String {
+    private func emoji(for card: Card) -> String {
         if emoji[card.id] == nil, emojis.count > 0 {
             let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
             emoji[card.id] = emojis.remove(at: randomIndex)

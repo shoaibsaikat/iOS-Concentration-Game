@@ -8,38 +8,45 @@
 import Foundation
 
 class Concentration {
-    var cards = [Card]()
-    var selectCount: Int?
-    var firstCardIndex: Int?
-    var secondCardIndex: Int?
+    private(set) var cards = [Card]()
+    private var selectCount: Int?
+    private var firstCardIndex: Int? {
+        get {
+            for index in cards.indices {
+                if (cards[index].faceUp) {
+                    return index
+                }
+            }
+            return nil
+        }
+        set {
+            if newValue != nil {
+                cards[newValue!].faceUp = true
+            }
+            selectCount = 1
+        }
+    }
     
     func selectCard(at index: Int) {
-        if index == firstCardIndex {
+        if (cards[index].faceUp) {
             return
         }
-        
+
         if selectCount == nil {
-            selectFirstCard(at: index)
+            firstCardIndex = index
         } else if selectCount == 1 {
             selectCount! += 1
-            cards[index].faceUp = true
-            secondCardIndex = index
             if cards[firstCardIndex!].id == cards[index].id {
                 cards[firstCardIndex!].matched = true
                 cards[index].matched = true
             }
+            cards[index].faceUp = true
         } else {
-            cards[firstCardIndex!].faceUp = false
-            cards[secondCardIndex!].faceUp = false
-            secondCardIndex = nil
-            selectFirstCard(at: index)
+            for index in cards.indices {
+                cards[index].faceUp = false
+            }
+            firstCardIndex = index
         }
-    }
-    
-    func selectFirstCard(at index: Int) {
-        firstCardIndex = index
-        cards[index].faceUp = true
-        selectCount = 1
     }
     
     init(cardPair: Int) {
@@ -50,7 +57,7 @@ class Concentration {
         shuffleCards()
     }
     
-    func shuffleCards() {
+    private func shuffleCards() {
         cards.shuffle()
     }
 }
