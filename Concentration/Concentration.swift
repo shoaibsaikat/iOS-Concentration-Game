@@ -28,6 +28,7 @@ class Concentration {
     }
     
     func selectCard(at index: Int) {
+        assert(cards.indices.contains(index), "Card index out of bound, entered \(index)")
         if (cards[index].faceUp) {
             return
         }
@@ -50,6 +51,7 @@ class Concentration {
     }
     
     init(cardPair: Int) {
+        assert(cardPair > 0, "Card pair needs to be greater than zero, but entered \(cardPair)")
         for _ in 0 ..< cardPair {
             let card = Card(id: Card.getUniqueId())
             cards += [card, card]
