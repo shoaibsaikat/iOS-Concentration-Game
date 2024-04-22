@@ -37,7 +37,7 @@ class Concentration {
             firstCardIndex = index
         } else if selectCount == 1 {
             selectCount! += 1
-            if cards[firstCardIndex!].id == cards[index].id {
+            if cards[firstCardIndex!] == cards[index] {
                 cards[firstCardIndex!].matched = true
                 cards[index].matched = true
             }

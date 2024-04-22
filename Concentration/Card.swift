@@ -7,10 +7,18 @@
 
 import Foundation
 
-struct Card {
+struct Card: Hashable {
     var faceUp = false
     var matched = false
-    private(set) var id: Int
+    private var id: Int
+    
+    var hashValue: Int {
+        return id
+    }
+    
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     private static var uniqueId = 0
     
