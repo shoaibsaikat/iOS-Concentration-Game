@@ -17,13 +17,26 @@ class ViewController: UIViewController {
     
     private var countTouch = 0 {
         didSet {
-            countLabel.text = "Flip: \(countTouch)"
+            generateAttributedLabel()
         }
+    }
+    
+    func generateAttributedLabel() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5,
+            .strokeColor: UIColor.orange
+        ]
+        countLabel.attributedText = NSAttributedString(string: "Flip: \(countTouch)", attributes: attributes)
+
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBOutlet private weak var countLabel: UILabel!
+    @IBOutlet private weak var countLabel: UILabel! {
+        didSet {
+            generateAttributedLabel()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
