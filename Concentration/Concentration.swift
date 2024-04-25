@@ -12,12 +12,7 @@ class Concentration {
     private var selectCount: Int?
     private var firstCardIndex: Int? {
         get {
-            for index in cards.indices {
-                if (cards[index].faceUp) {
-                    return index
-                }
-            }
-            return nil
+            return cards.indices.filter { cards[$0].faceUp }.first
         }
         set {
             if newValue != nil {
@@ -29,20 +24,23 @@ class Concentration {
     
     func selectCard(at index: Int) {
         assert(cards.indices.contains(index), "Card index out of bound, entered \(index)")
-        if (cards[index].faceUp) {
+        if cards[index].faceUp {
             return
         }
 
-        if selectCount == nil {
-            firstCardIndex = index
-        } else if selectCount == 1 {
+        switch selectCount {
+        case nil:
+            selectCount = index
+            break
+        case 1:
             selectCount! += 1
             if cards[firstCardIndex!] == cards[index] {
                 cards[firstCardIndex!].matched = true
                 cards[index].matched = true
             }
             cards[index].faceUp = true
-        } else {
+            break
+        default:
             for index in cards.indices {
                 cards[index].faceUp = false
             }
