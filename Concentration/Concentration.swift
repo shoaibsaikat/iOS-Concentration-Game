@@ -31,6 +31,7 @@ class Concentration {
         switch selectCount {
         case nil:
             selectCount = index
+            cards[index].faceUp = true
             break
         case 1:
             selectCount! += 1
@@ -50,6 +51,11 @@ class Concentration {
     
     init(cardPair: Int) {
         assert(cardPair > 0, "Card pair needs to be greater than zero, but entered \(cardPair)")
+        
+        for var card in cards {
+            card.faceUp = false
+            card.matched = false
+        }
         for _ in 0 ..< cardPair {
             let card = Card(id: Card.getUniqueId())
             cards += [card, card]

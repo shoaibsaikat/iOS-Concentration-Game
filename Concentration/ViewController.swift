@@ -30,6 +30,14 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func newGameButton(_ sender: UIButton) {
+        game = Concentration(cardPair: cardPairs)
+        emojis = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚" ]
+        emoji = [Card: String]()
+        updateCard()
+        countTouch = 0
+    }
+    
     @IBOutlet private var cardButtons: [UIButton]!
     
     @IBOutlet private weak var countLabel: UILabel! {
