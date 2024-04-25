@@ -133,34 +133,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Flip: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-2h-QuJ">
-                                <rect key="frame" x="161" y="819" width="93.5" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-I7-FyW">
-                                <rect key="frame" x="102" y="723" width="211" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-I7-FyW">
+                                <rect key="frame" x="120" y="351" width="174" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pu-aG-t1l"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-2h-QuJ">
+                                <rect key="frame" x="150" y="427" width="114" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="caJ-2h-QuJ" secondAttribute="bottom" id="0Xd-X1-vNA"/>
-                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="OVA-Oe-rFg" secondAttribute="centerX" id="2eh-iZ-Qn0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4uW-p3-Lma" secondAttribute="trailing" constant="20" id="4lm-jw-l2Q"/>
                             <constraint firstItem="4uW-p3-Lma" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="4ye-Fp-LLw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hc6-I7-FyW" secondAttribute="trailing" id="5UT-5h-kK8"/>
-                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4uW-p3-Lma" secondAttribute="bottom" constant="8" symbolic="YES" id="U5O-xn-QBy"/>
-                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W2R-5s-1Ag"/>
-                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" secondItem="Hc6-I7-FyW" secondAttribute="bottom" constant="39" id="bHP-Ln-5yU"/>
-                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="centerX" secondItem="caJ-2h-QuJ" secondAttribute="centerX" id="gED-SE-wmb"/>
+                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="307" id="Lrw-Cq-6ec"/>
+                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="P8M-Zm-r0A"/>
+                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="QSU-cA-O3W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hc6-I7-FyW" secondAttribute="trailing" constant="120" id="TpK-Cy-ek1"/>
+                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="383" id="jI6-ag-ACY"/>
                             <constraint firstItem="4uW-p3-Lma" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rNJ-KK-QhJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="caJ-2h-QuJ" secondAttribute="trailing" constant="150" id="v4p-kL-ZsB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -181,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1558" y="-2032"/>
+            <point key="canvasLocation" x="-1755.072463768116" y="-2078.5714285714284"/>
         </scene>
     </scenes>
     <resources>
