@@ -32,6 +32,7 @@ class Concentration {
         case nil:
             selectCount = index
             cards[index].faceUp = true
+            firstCardIndex = index
             break
         case 1:
             selectCount! += 1

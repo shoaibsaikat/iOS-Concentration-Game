@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    struct GameData {
+        static var emojiBank = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚", "📷", "⛈" ]
+    }
+    
     private lazy var game = Concentration(cardPair: cardPairs)
     
     private var cardPairs: Int {
@@ -32,7 +36,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGameButton(_ sender: UIButton) {
         game = Concentration(cardPair: cardPairs)
-        emojis = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚" ]
+        emojis = GameData.emojiBank
         emoji = [Card: String]()
         updateCard()
         countTouch = 0
@@ -79,7 +83,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojis = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚" ]
+    private var emojis = GameData.emojiBank
     
     private var emoji = [Card: String]()
     
