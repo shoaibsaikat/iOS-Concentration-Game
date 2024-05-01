@@ -10,7 +10,15 @@ import UIKit
 class ViewController: UIViewController {
     
     struct GameData {
-        static var emojiBank = [ "🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚", "📷", "⛈" ]
+        static var emojiBank = [
+            ["🤩", "😍", "😇", "🤓", "😜", "🥵", "🤬", "🥶", "🤯"],
+            ["🐶", "🐮", "🐔", "🐻", "🐋", "🐆", "🦚", "🦢", "🐪"],
+            ["🚗", "🚑", "🚌", "🚅", "🚁", "🚤", "🚀", "🛩", "🚜"],
+            ["🍰", "🍤", "🍩", "🍪", "🥛", "🍫", "🍗", "🍔", "🌮"],
+            ["🍎", "🍒", "🥭", "🍉", "🍋", "🍊", "🍐", "🍍", "🍌"],
+            ["⚽️", "🏀", "🏓", "🏸", "🎾", "🏏", "🏑", "🛹", "🥊"],
+            ["🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚", "📷", "⛈"],
+        ]
     }
     
     private lazy var game = Concentration(cardPair: cardPairs)
@@ -36,7 +44,8 @@ class ViewController: UIViewController {
     
     @IBAction func newGameButton(_ sender: UIButton) {
         game = Concentration(cardPair: cardPairs)
-        emojis = GameData.emojiBank
+        theme = GameData.emojiBank.count.random
+        emojis = GameData.emojiBank[theme]
         emoji = [Card: String]()
         updateCard()
     }
@@ -82,22 +91,22 @@ class ViewController: UIViewController {
         gameScore = game.getScore()
     }
     
-    private var emojis = GameData.emojiBank
-    
+    lazy private var emojis = GameData.emojiBank[theme]
+    private var theme = GameData.emojiBank.count.random
     private var emoji = [Card: String]()
     
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojis.count > 0 {
-            emoji[card] = emojis.remove(at: emojis.count.arc4random)
+            emoji[card] = emojis.remove(at: emojis.count.random)
         }
         return emoji[card] ?? "?"
     }
 }
 
 extension Int {
-    var arc4random: Int {
+    var random: Int {
         if (abs(self) > 0) {
-            return Int(arc4random_uniform(UInt32(abs(self))))
+            return Int.random(in: 0..<abs(self))
         } else {
             return self
         }
