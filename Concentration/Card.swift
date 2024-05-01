@@ -10,6 +10,7 @@ import Foundation
 struct Card: Hashable {
     var faceUp = false
     var matched = false
+    var touchCount = 0
     private var id: Int
     
     func hash(into hasher: inout Hasher) {

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-2h-QuJ">
-                                <rect key="frame" x="150" y="717" width="114" height="43"/>
+                                <rect key="frame" x="20" y="717" width="374" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hc6-I7-FyW" firstAttribute="firstBaseline" secondItem="0It-A2-JQZ" secondAttribute="baseline" constant="48" symbolType="layoutAnchor" id="5DY-12-cJ1"/>
-                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="P8M-Zm-r0A"/>
+                            <constraint firstItem="caJ-2h-QuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P8M-Zm-r0A"/>
                             <constraint firstItem="Hc6-I7-FyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="QSU-cA-O3W"/>
                             <constraint firstItem="4ad-yt-ir5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TLe-ER-Gg7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hc6-I7-FyW" secondAttribute="trailing" constant="120" id="TpK-Cy-ek1"/>
@@ -197,7 +197,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="caJ-2h-QuJ" secondAttribute="bottom" constant="102" id="eoU-5Z-klg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ad-yt-ir5" secondAttribute="trailing" constant="20" id="gLI-ez-qup"/>
                             <constraint firstItem="4ad-yt-ir5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="plW-ki-ldI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="caJ-2h-QuJ" secondAttribute="trailing" constant="150" id="v4p-kL-ZsB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="caJ-2h-QuJ" secondAttribute="trailing" constant="20" id="v4p-kL-ZsB"/>
                         </constraints>
                     </view>
                     <connections>

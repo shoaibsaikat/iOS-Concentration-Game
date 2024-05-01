@@ -24,6 +24,7 @@ class Concentration {
     
     func selectCard(at index: Int) {
         assert(cards.indices.contains(index), "Card index out of bound, entered \(index)")
+        cards[index].touchCount += 1
         if cards[index].faceUp {
             return
         }
@@ -48,6 +49,30 @@ class Concentration {
             }
             firstCardIndex = index
         }
+    }
+    
+    func getScore() -> Int {
+        var score = 0
+        for card in cards {
+            if card.matched {
+                if card.touchCount > 2 {
+//                  ignore first try and matched case then for each unmatched cases add -1
+                    for _ in 3...card.touchCount {
+                        score -= 1
+                    }
+                }
+//              for matched case
+                score += 1
+            } else {
+                if card.touchCount > 1 {
+//                  ignore first try then for each unmatched cases add -1
+                    for _ in 1..<card.touchCount {
+                        score -= 1
+                    }
+                }
+            }
+        }
+        return score
     }
     
     init(cardPair: Int) {

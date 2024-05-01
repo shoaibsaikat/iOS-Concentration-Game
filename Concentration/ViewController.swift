@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
-    private var countTouch = 0 {
+    private var gameScore = 0 {
         didSet {
             generateAttributedLabel()
         }
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             .strokeWidth: 5,
             .strokeColor: UIColor.orange
         ]
-        countLabel.attributedText = NSAttributedString(string: "Flip: \(countTouch)", attributes: attributes)
+        countLabel.attributedText = NSAttributedString(string: "Score: \(gameScore)", attributes: attributes)
 
     }
     
@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         emojis = GameData.emojiBank
         emoji = [Card: String]()
         updateCard()
-        countTouch = 0
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -65,7 +64,6 @@ class ViewController: UIViewController {
     }
     
     private func updateCard() {
-        countTouch += 1
         for index in cardButtons.indices {
             let card = game.cards[index]
             let button = cardButtons[index]
@@ -81,6 +79,7 @@ class ViewController: UIViewController {
                 button.setTitle("", for: UIControl.State.normal)
             }
         }
+        gameScore = game.getScore()
     }
     
     private var emojis = GameData.emojiBank
