@@ -101,7 +101,7 @@ class ConcentrationViewController: UIViewController {
     }
     
     lazy private var emojis = GameData.emojiBank[theme!]
-    private var theme: Int? = GameData.emojiBank.count.random
+    var theme: Int? = GameData.emojiBank.count.random
     private var emoji = [Card: String]()
     
     private func emoji(for card: Card) -> String {

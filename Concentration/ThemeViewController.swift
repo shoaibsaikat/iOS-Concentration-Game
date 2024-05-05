@@ -14,16 +14,28 @@ class ThemeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let segueId = segue.identifier {
+            switch segueId {
+            case "Show Game":
+                if let button = sender as? UIButton, let game = segue.destination as? ConcentrationViewController {
+                    switch button.currentTitle {
+                    case "Food":
+                        game.theme = ConcentrationViewController.GameData.Theme.food.rawValue
+                    case "Fruit":
+                        game.theme = ConcentrationViewController.GameData.Theme.fruit.rawValue
+                    case "Sport":
+                        game.theme = ConcentrationViewController.GameData.Theme.sport.rawValue
+                    default:
+                        game.theme = ConcentrationViewController.GameData.emojiBank.count.random
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
-    */
+
 
 }

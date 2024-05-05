@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m98-eZ-Ord">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQk-Cc-GCu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jGk-Xh-93h">
+            <objects>
+                <navigationController id="oQk-Cc-GCu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zu-Qy-Y9A">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="m98-eZ-Ord" kind="relationship" relationship="rootViewController" id="t8V-I1-M7H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yT-H5-J70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4499" y="-2654"/>
+        </scene>
         <!--Theme View Controller-->
         <scene sceneID="e07-ES-NKi">
             <objects>
@@ -18,39 +34,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zgS-fq-5tg">
-                                <rect key="frame" x="16" y="334" width="382" height="229"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zgS-fq-5tg">
+                                <rect key="frame" x="16" y="378" width="382" height="185"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-5C-o0a">
-                                        <rect key="frame" x="152" y="0.0" width="78" height="55"/>
+                                        <rect key="frame" x="152" y="0.0" width="78" height="40.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="QvZ-sm-Zuv"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Show Game" id="QvZ-sm-Zuv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-zl-bHl">
-                                        <rect key="frame" x="156" y="58" width="70" height="55"/>
+                                        <rect key="frame" x="156" y="48.5" width="70" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Fruit"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="mVo-4z-c8i"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Show Game" id="mVo-4z-c8i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dt-auz">
-                                        <rect key="frame" x="148.5" y="116" width="85" height="55"/>
+                                        <rect key="frame" x="148.5" y="96.5" width="85" height="40.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="WN8-Qc-Cjg"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Show Game" id="WN8-Qc-Cjg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-ub-jH1">
-                                        <rect key="frame" x="126.5" y="174" width="129" height="55"/>
+                                        <rect key="frame" x="126.5" y="145" width="129" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Random"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="9JM-h3-ANN"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Show Game" id="9JM-h3-ANN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -65,6 +81,7 @@
                             <constraint firstItem="zgS-fq-5tg" firstAttribute="centerX" secondItem="uli-Rg-dRb" secondAttribute="centerX" id="uvE-bo-Le0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hYi-R8-IBA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-ph-X86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,16 +92,16 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-2h-QuJ">
-                                <rect key="frame" x="20" y="755" width="374" height="43"/>
+                                <rect key="frame" x="20" y="809" width="374" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-I7-FyW">
-                                <rect key="frame" x="120" y="692" width="174" height="55"/>
+                                <rect key="frame" x="120" y="746" width="174" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
@@ -92,7 +109,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-yt-ir5">
-                                <rect key="frame" x="20" y="0.0" width="374" height="304"/>
+                                <rect key="frame" x="20" y="104" width="374" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="McM-ba-Ztp">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -303,7 +320,7 @@
                             <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" secondItem="Hc6-I7-FyW" secondAttribute="bottom" constant="8" symbolic="YES" id="ek4-3q-ofa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="caJ-2h-QuJ" secondAttribute="bottom" constant="10" id="eoU-5Z-klg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ad-yt-ir5" secondAttribute="trailing" constant="20" id="gLI-ez-qup"/>
-                            <constraint firstItem="4ad-yt-ir5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="plW-ki-ldI"/>
+                            <constraint firstItem="4ad-yt-ir5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="plW-ki-ldI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="caJ-2h-QuJ" secondAttribute="trailing" constant="20" id="v4p-kL-ZsB"/>
                         </constraints>
                     </view>
@@ -334,7 +351,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QvZ-sm-Zuv"/>
+        <segue reference="9JM-h3-ANN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
