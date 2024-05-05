@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
     struct GameData {
         static var emojiBank = [
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     func generateAttributedLabel() {
         let attributes: [NSAttributedString.Key: Any] = [
             .strokeWidth: 5,
-            .strokeColor: UIColor.orange
+            .strokeColor: UIColor.systemGreen
         ]
         countLabel.attributedText = NSAttributedString(string: "Score: \(gameScore)", attributes: attributes)
 
@@ -77,14 +77,14 @@ class ViewController: UIViewController {
             let card = game.cards[index]
             let button = cardButtons[index]
             if card.faceUp {
-                button.backgroundColor = UIColor.white
+                button.backgroundColor = UIColor.systemGray5
                 button.setTitle(emoji(for: card), for: UIControl.State.normal)
             } else {
-                button.backgroundColor = UIColor.orange
+                button.backgroundColor = UIColor.systemBlue
                 button.setTitle("", for: UIControl.State.normal)
             }
             if card.matched {
-                button.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
+                button.backgroundColor = UIColor.clear
                 button.setTitle("", for: UIControl.State.normal)
             }
         }
