@@ -10,6 +10,15 @@ import UIKit
 class ConcentrationViewController: UIViewController {
     
     struct GameData {
+        enum Theme: Int {
+            case face       = 0
+            case animal     = 1
+            case vehicle    = 2
+            case food       = 3
+            case fruit      = 4
+            case sport      = 5
+            case misc       = 6
+        }
         static var emojiBank = [
             ["🤩", "😍", "😇", "🤓", "😜", "🥵", "🤬", "🥶", "🤯"],
             ["🐶", "🐮", "🐔", "🐻", "🐋", "🐆", "🦚", "🦢", "🐪"],
@@ -45,7 +54,7 @@ class ConcentrationViewController: UIViewController {
     @IBAction func newGameButton(_ sender: UIButton) {
         game = Concentration(cardPair: cardPairs)
         theme = GameData.emojiBank.count.random
-        emojis = GameData.emojiBank[theme]
+        emojis = GameData.emojiBank[theme!]
         emoji = [Card: String]()
         updateCard()
     }
@@ -91,8 +100,8 @@ class ConcentrationViewController: UIViewController {
         gameScore = game.getScore()
     }
     
-    lazy private var emojis = GameData.emojiBank[theme]
-    private var theme = GameData.emojiBank.count.random
+    lazy private var emojis = GameData.emojiBank[theme!]
+    private var theme: Int? = GameData.emojiBank.count.random
     private var emoji = [Card: String]()
     
     private func emoji(for card: Card) -> String {
