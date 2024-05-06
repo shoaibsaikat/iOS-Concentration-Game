@@ -37,7 +37,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A1-hH-3p0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5212" y="-2654"/>
+            <point key="canvasLocation" x="-5341" y="-2654"/>
         </scene>
         <!--Theme View Controller-->
         <scene sceneID="e07-ES-NKi">
@@ -55,7 +55,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="Xmh-DH-XJ9"/>
+                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="yoB-KR-nbv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-zl-bHl">
@@ -63,7 +63,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Fruit"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="ucM-CX-7IB"/>
+                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="jLD-0N-tqt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dt-auz">
@@ -71,7 +71,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="FQ8-fX-VrH"/>
+                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="lSg-R6-kAA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-ub-jH1">
@@ -79,7 +79,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Random"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="0PS-Zp-qTp"/>
+                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="5hO-Qx-njV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -95,10 +95,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hYi-R8-IBA"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="Qs9-je-PFi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-ph-X86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3908" y="-2654"/>
+            <point key="canvasLocation" x="-3799" y="-2654"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -360,11 +363,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3908" y="-1972"/>
+            <point key="canvasLocation" x="-4562" y="-1797"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0PS-Zp-qTp"/>
+        <segue reference="Qs9-je-PFi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

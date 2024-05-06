@@ -82,28 +82,37 @@ class ConcentrationViewController: UIViewController {
     }
     
     private func updateCard() {
-        for index in cardButtons.indices {
-            let card = game.cards[index]
-            let button = cardButtons[index]
-            if card.faceUp {
-                button.backgroundColor = UIColor.systemGray5
-                button.setTitle(emoji(for: card), for: UIControl.State.normal)
-            } else {
-                button.backgroundColor = UIColor.systemBlue
-                button.setTitle("", for: UIControl.State.normal)
+        if cardButtons != nil {
+            for index in cardButtons.indices {
+                let card = game.cards[index]
+                let button = cardButtons[index]
+                if card.faceUp {
+                    button.backgroundColor = UIColor.systemGray5
+                    button.setTitle(emoji(for: card), for: UIControl.State.normal)
+                } else {
+                    button.backgroundColor = UIColor.systemBlue
+                    button.setTitle("", for: UIControl.State.normal)
+                }
+                if card.matched {
+                    button.backgroundColor = UIColor.clear
+                    button.setTitle("", for: UIControl.State.normal)
+                }
             }
-            if card.matched {
-                button.backgroundColor = UIColor.clear
-                button.setTitle("", for: UIControl.State.normal)
-            }
+            gameScore = game.getScore()
         }
-        gameScore = game.getScore()
     }
     
-    lazy private var emojis = GameData.emojiBank[theme!]
-    var theme: Int? = GameData.emojiBank.count.random
-    private var emoji = [Card: String]()
+    func resetTheme(_ theme: Int) {
+        self.theme = theme
+        emojis = GameData.emojiBank[theme]
+        emoji = [Card: String]()
+        updateCard()
+    }
     
+    private var theme: Int? = GameData.emojiBank.count.random
+    private var emoji = [Card: String]()
+    lazy private var emojis = GameData.emojiBank[theme!]
+
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojis.count > 0 {
             emoji[card] = emojis.remove(at: emojis.count.random)
