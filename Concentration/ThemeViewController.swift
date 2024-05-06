@@ -8,25 +8,25 @@
 import UIKit
 
 class ThemeViewController: UIViewController {
-    
     private var concentrationViewController: ConcentrationViewController? {
-        return splitViewController?.viewControllers.last as? ConcentrationViewController
+        return (splitViewController?.viewControllers.last as? UINavigationController)?.viewControllers.last as? ConcentrationViewController
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func ChangeTheme(_ sender: UIButton) {
-        if let game = concentrationViewController, let buttonType = sender.currentTitle {
-            setThemeFromButtonType(buttonType, toGame: game)
+    @IBAction func changeTheme(_ sender: UIButton) {
+//        print(concentrationViewController ?? "empty view")
+        if let game = concentrationViewController, let theme = sender.currentTitle {
+            setGameTheme(theme, toGame: game)
         } else {
             performSegue(withIdentifier: "Show Game", sender: sender)
         }
     }
     
-    func setThemeFromButtonType(_ buttonType: String, toGame game: ConcentrationViewController) {
-        switch buttonType {
+    func setGameTheme(_ theme: String, toGame game: ConcentrationViewController) {
+        switch theme {
         case "Food":
             game.resetTheme(ConcentrationViewController.GameData.Theme.food.rawValue)
         case "Fruit":
@@ -39,15 +39,8 @@ class ThemeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let segueId = segue.identifier {
-            switch segueId {
-            case "Show Game":
-                if let button = sender as? UIButton, let game = segue.destination as? ConcentrationViewController, let buttonType = button.currentTitle {
-                    setThemeFromButtonType(buttonType, toGame: game)
-                }
-            default:
-                break
-            }
+        if segue.identifier == "Show Game", let game = segue.destination as? ConcentrationViewController, let theme = (sender as? UIButton)?.currentTitle {
+            setGameTheme(theme, toGame: game)
         }
     }
 }

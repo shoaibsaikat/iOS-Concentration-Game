@@ -8,6 +8,9 @@
 import UIKit
 
 class ConcentrationViewController: UIViewController {
+    override var description: String {
+        return "Current theme: \(theme ?? -1)"
+    }
     
     struct GameData {
         enum Theme: Int {

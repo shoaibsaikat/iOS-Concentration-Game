@@ -13,15 +13,15 @@
         <!--Split View Controller-->
         <scene sceneID="fES-hH-rx1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0A1-hH-3p0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <splitViewController allowDoubleColumnStyle="YES" id="QHh-Hg-7XX" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="p8V-Xo-WNX" kind="relationship" relationship="masterViewController" id="bvA-jG-PYZ"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="7WQ-IW-x7P"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="V2z-xV-U73"/>
+                        <segue destination="p8V-Xo-WNX" kind="relationship" relationship="masterViewController" id="aua-gj-Czc"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0A1-hH-3p0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5341" y="-2654"/>
+            <point key="canvasLocation" x="-5233" y="-2654"/>
         </scene>
         <!--Theme View Controller-->
         <scene sceneID="e07-ES-NKi">
@@ -39,7 +39,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
-                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="yoB-KR-nbv"/>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="yoB-KR-nbv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-zl-bHl">
@@ -47,7 +47,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Fruit"/>
                                         <connections>
-                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="jLD-0N-tqt"/>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="jLD-0N-tqt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dt-auz">
@@ -55,7 +55,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
-                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="lSg-R6-kAA"/>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="lSg-R6-kAA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-ub-jH1">
@@ -63,7 +63,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Random"/>
                                         <connections>
-                                            <action selector="ChangeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="5hO-Qx-njV"/>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="5hO-Qx-njV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-ph-X86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3688" y="-2654"/>
+            <point key="canvasLocation" x="-3822" y="-2654"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,9 +101,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-I7-FyW">
-                                <rect key="frame" x="120" y="736" width="174" height="55"/>
+                                <rect key="frame" x="20" y="736" width="374" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="New Game"/>
+                                <state key="normal" title="Random New Game"/>
                                 <connections>
                                     <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pu-aG-t1l"/>
                                 </connections>
@@ -314,10 +314,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="caJ-2h-QuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P8M-Zm-r0A"/>
-                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="QSU-cA-O3W"/>
+                            <constraint firstItem="Hc6-I7-FyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QSU-cA-O3W"/>
                             <constraint firstItem="4ad-yt-ir5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TLe-ER-Gg7"/>
                             <constraint firstItem="4ad-yt-ir5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="TV9-su-JDC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hc6-I7-FyW" secondAttribute="trailing" constant="120" id="TpK-Cy-ek1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hc6-I7-FyW" secondAttribute="trailing" constant="20" id="TpK-Cy-ek1"/>
                             <constraint firstItem="caJ-2h-QuJ" firstAttribute="top" secondItem="Hc6-I7-FyW" secondAttribute="bottom" constant="8" symbolic="YES" id="ek4-3q-ofa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="caJ-2h-QuJ" secondAttribute="bottom" constant="20" id="eoU-5Z-klg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ad-yt-ir5" secondAttribute="trailing" constant="20" id="gLI-ez-qup"/>
@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4490" y="-1824"/>
+            <point key="canvasLocation" x="-4528" y="-1955"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zjG-w9-vRJ">
