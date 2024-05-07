@@ -33,6 +33,12 @@ class ThemeViewController: UIViewController {
             game.resetTheme(ConcentrationViewController.GameData.Theme.fruit.rawValue)
         case "Sport":
             game.resetTheme(ConcentrationViewController.GameData.Theme.sport.rawValue)
+        case "Face":
+            game.resetTheme(ConcentrationViewController.GameData.Theme.face.rawValue)
+        case "Animal":
+            game.resetTheme(ConcentrationViewController.GameData.Theme.animal.rawValue)
+        case "Vehicle":
+            game.resetTheme(ConcentrationViewController.GameData.Theme.vehicle.rawValue)
         default:
             game.resetTheme(ConcentrationViewController.GameData.emojiBank.count.random)
         }

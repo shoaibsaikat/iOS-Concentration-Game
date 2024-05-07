@@ -51,15 +51,18 @@ class ConcentrationViewController: UIViewController {
             .strokeColor: UIColor.systemGreen
         ]
         countLabel.attributedText = NSAttributedString(string: "Score: \(gameScore)", attributes: attributes)
-
+    }
+    
+    func startNewGame(withTheme theme: Int) {
+        self.theme = theme
+        game = Concentration(cardPair: cardPairs)
+        emojis = GameData.emojiBank[theme]
+        emoji = [Card: String]()
+        updateCard()
     }
     
     @IBAction func newGameButton(_ sender: UIButton) {
-        game = Concentration(cardPair: cardPairs)
-        theme = GameData.emojiBank.count.random
-        emojis = GameData.emojiBank[theme!]
-        emoji = [Card: String]()
-        updateCard()
+        startNewGame(withTheme: GameData.emojiBank.count.random)
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -105,11 +108,24 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
+    var gameEnded: Bool {
+        for card in game.cards {
+            if card.matched == false {
+                return false
+            }
+        }
+        return true
+    }
+    
     func resetTheme(_ theme: Int) {
-        self.theme = theme
-        emojis = GameData.emojiBank[theme]
-        emoji = [Card: String]()
-        updateCard()
+        if gameEnded {
+            startNewGame(withTheme: theme)
+        } else {
+            self.theme = theme
+            emojis = GameData.emojiBank[theme]
+            emoji = [Card: String]()
+            updateCard()
+        }
     }
     
     private var theme: Int? = GameData.emojiBank.count.random

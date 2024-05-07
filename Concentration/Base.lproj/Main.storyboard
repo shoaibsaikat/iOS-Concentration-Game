@@ -31,11 +31,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zgS-fq-5tg">
-                                <rect key="frame" x="16" y="378" width="382" height="185"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="trx-ft-2Bi">
+                                <rect key="frame" x="20" y="318" width="374" height="340"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-5C-o0a">
-                                        <rect key="frame" x="152" y="0.0" width="78" height="40.333333333333336"/>
+                                        <rect key="frame" x="148" y="0.0" width="78" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-zl-bHl">
-                                        <rect key="frame" x="156" y="48.333333333333314" width="70" height="40.333333333333343"/>
+                                        <rect key="frame" x="152" y="57" width="70" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Fruit"/>
                                         <connections>
@@ -51,19 +51,35 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dt-auz">
-                                        <rect key="frame" x="148.66666666666666" y="96.666666666666686" width="85" height="40"/>
+                                        <rect key="frame" x="144.66666666666666" y="114" width="85" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
                                             <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="lSg-R6-kAA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-ub-jH1">
-                                        <rect key="frame" x="126.66666666666666" y="144.66666666666663" width="129" height="40.333333333333343"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-83-ls6">
+                                        <rect key="frame" x="150" y="171" width="74" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <state key="normal" title="Random"/>
+                                        <state key="normal" title="Face"/>
                                         <connections>
-                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="5hO-Qx-njV"/>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="hgw-lr-swg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaG-OE-Dwe">
+                                        <rect key="frame" x="134" y="228" width="106" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Animal"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="7jV-ZK-Vdk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZk-XA-oQz">
+                                        <rect key="frame" x="131" y="285" width="112" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="Vehicle"/>
+                                        <connections>
+                                            <action selector="changeTheme:" destination="m98-eZ-Ord" eventType="touchUpInside" id="eRA-sa-diS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -72,10 +88,10 @@
                         <viewLayoutGuide key="safeArea" id="kpv-Mr-baH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zgS-fq-5tg" firstAttribute="leading" secondItem="kpv-Mr-baH" secondAttribute="leading" constant="16" id="8OQ-4s-cLB"/>
-                            <constraint firstItem="zgS-fq-5tg" firstAttribute="top" secondItem="kpv-Mr-baH" secondAttribute="top" constant="290" id="Pkm-ID-b7j"/>
-                            <constraint firstItem="kpv-Mr-baH" firstAttribute="bottom" secondItem="zgS-fq-5tg" secondAttribute="bottom" constant="299" id="lMP-QS-ydZ"/>
-                            <constraint firstItem="zgS-fq-5tg" firstAttribute="centerX" secondItem="uli-Rg-dRb" secondAttribute="centerX" id="uvE-bo-Le0"/>
+                            <constraint firstItem="kpv-Mr-baH" firstAttribute="bottom" secondItem="trx-ft-2Bi" secondAttribute="bottom" constant="204" id="D1W-x6-uTf"/>
+                            <constraint firstItem="trx-ft-2Bi" firstAttribute="top" secondItem="kpv-Mr-baH" secondAttribute="top" constant="230" id="MXp-6a-GY3"/>
+                            <constraint firstItem="kpv-Mr-baH" firstAttribute="trailing" secondItem="trx-ft-2Bi" secondAttribute="trailing" constant="20" id="g68-2S-M6e"/>
+                            <constraint firstItem="trx-ft-2Bi" firstAttribute="leading" secondItem="kpv-Mr-baH" secondAttribute="leading" constant="20" id="voH-Ed-Cds"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hYi-R8-IBA"/>
