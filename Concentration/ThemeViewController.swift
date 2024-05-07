@@ -17,36 +17,30 @@ class ThemeViewController: UIViewController {
     }
 
     @IBAction func changeTheme(_ sender: UIButton) {
-//        print(concentrationViewController ?? "empty view")
         if let game = concentrationViewController, let theme = sender.currentTitle {
-            setGameTheme(theme, toGame: game)
+//            ipad
+            game.resetTheme(getTheme(theme))
         } else {
+//            iphone
             performSegue(withIdentifier: "Show Game", sender: sender)
         }
     }
     
-    func setGameTheme(_ theme: String, toGame game: ConcentrationViewController) {
+    func getTheme(_ theme: String) -> Int {
         switch theme {
-        case "Food":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.food.rawValue)
-        case "Fruit":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.fruit.rawValue)
-        case "Sport":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.sport.rawValue)
-        case "Face":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.face.rawValue)
-        case "Animal":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.animal.rawValue)
-        case "Vehicle":
-            game.resetTheme(ConcentrationViewController.GameData.Theme.vehicle.rawValue)
-        default:
-            game.resetTheme(ConcentrationViewController.GameData.emojiBank.count.random)
+        case "Food":    return ConcentrationViewController.GameData.Theme.food.rawValue
+        case "Fruit":   return ConcentrationViewController.GameData.Theme.fruit.rawValue
+        case "Sport":   return ConcentrationViewController.GameData.Theme.sport.rawValue
+        case "Face":    return ConcentrationViewController.GameData.Theme.face.rawValue
+        case "Animal":  return ConcentrationViewController.GameData.Theme.animal.rawValue
+        case "Vehicle": return ConcentrationViewController.GameData.Theme.vehicle.rawValue
+        default:        return ConcentrationViewController.GameData.emojiBank.count.random
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Game", let game = segue.destination as? ConcentrationViewController, let theme = (sender as? UIButton)?.currentTitle {
-            setGameTheme(theme, toGame: game)
+            game.theme = getTheme(theme)
         }
     }
 }

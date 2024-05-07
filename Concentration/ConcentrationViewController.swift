@@ -9,7 +9,7 @@ import UIKit
 
 class ConcentrationViewController: UIViewController {
     override var description: String {
-        return "Current theme: \(theme ?? -1)"
+        return "Current theme: \(theme)"
     }
     
     struct GameData {
@@ -128,9 +128,9 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
-    private var theme: Int? = GameData.emojiBank.count.random
+    var theme: Int = GameData.emojiBank.count.random
     private var emoji = [Card: String]()
-    lazy private var emojis = GameData.emojiBank[theme!]
+    lazy private var emojis = GameData.emojiBank[theme]
 
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojis.count > 0 {
