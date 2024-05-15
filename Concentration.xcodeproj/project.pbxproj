@@ -68,7 +68,6 @@
 				114AEB9B2B98B7D500ECAEC6 /* ConcentrationViewController.swift */,
 				114AEB9D2B98B7D500ECAEC6 /* Main.storyboard */,
 				11481D162BE7C28D006EC1CE /* ThemeViewController.swift */,
-				114AEBA22B98B7E100ECAEC6 /* LaunchScreen.storyboard */,
 				114AEBA52B98B7E100ECAEC6 /* Info.plist */,
 			);
 			path = Concentration;
@@ -79,6 +78,7 @@
 			children = (
 				114AEB972B98B7D500ECAEC6 /* AppDelegate.swift */,
 				114AEB992B98B7D500ECAEC6 /* SceneDelegate.swift */,
+				114AEBA22B98B7E100ECAEC6 /* LaunchScreen.storyboard */,
 				114AEBA02B98B7E100ECAEC6 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
