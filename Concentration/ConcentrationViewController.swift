@@ -143,7 +143,7 @@ class ConcentrationViewController: UIViewController {
 extension Int {
     var random: Int {
         if (abs(self) > 0) {
-            return Int.random(in: 0..<abs(self))
+            return Int.random(in: 0 ..< abs(self))
         } else {
             return self
         }

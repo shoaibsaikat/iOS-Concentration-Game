@@ -57,7 +57,7 @@ class Concentration {
             if card.matched {
                 if card.touchCount > 2 {
 //                  ignore first try and matched case then for each unmatched cases add -1
-                    for _ in 3...card.touchCount {
+                    for _ in 3 ... card.touchCount {
                         score -= 1
                     }
                 }
@@ -66,7 +66,7 @@ class Concentration {
             } else {
                 if card.touchCount > 1 {
 //                  ignore first try then for each unmatched cases add -1
-                    for _ in 1..<card.touchCount {
+                    for _ in 1 ..< card.touchCount {
                         score -= 1
                     }
                 }
