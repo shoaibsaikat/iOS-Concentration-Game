@@ -362,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4528" y="-1955"/>
+            <point key="canvasLocation" x="-4527" y="-1881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zjG-w9-vRJ">
@@ -384,7 +384,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a0X-wp-kWB"/>
+        <segue reference="V2z-xV-U73"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
