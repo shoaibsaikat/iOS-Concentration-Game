@@ -38,10 +38,10 @@ class ThemeViewController: UIViewController, UISplitViewControllerDelegate {
         if let theme = sender.currentTitle {
             // we already know the running game
             if let game = gameViewController {
-                // for ipad
+                // for ipad or big screen iphone, master page will be hidded but present, so no need to check for last game
                 game.resetTheme(getTheme(theme))
             } else if lastGame != nil {
-                // for iphone
+                // for small screen iphones, we need the last game if view is changed while playing because master view is not present
                 lastGame?.resetTheme(getTheme(theme))
                 gameNavigationController?.pushViewController(lastGame!, animated: true)
             } else {
