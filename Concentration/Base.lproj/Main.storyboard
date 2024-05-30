@@ -13,7 +13,7 @@
         <!--Split View Controller-->
         <scene sceneID="fES-hH-rx1">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" id="QHh-Hg-7XX" sceneMemberID="viewController">
+                <splitViewController id="QHh-Hg-7XX" sceneMemberID="viewController">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="V2z-xV-U73"/>
                         <segue destination="p8V-Xo-WNX" kind="relationship" relationship="masterViewController" id="aua-gj-Czc"/>
