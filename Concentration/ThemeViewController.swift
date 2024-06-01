@@ -18,9 +18,9 @@ class ThemeViewController: UIViewController, UISplitViewControllerDelegate {
     }
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        // in master detail page by default default page is shown
+        // in master detail page by default detail page is shown
         // for small screen iPhone we're showing master page
-        // but for big screen i.e. iPads side by side view is shown and this will have no effect
+        // but for big screen i.e. iPads or iPhone plus models, side by side view is shown and this will have no effect
         return true
     }
 
@@ -29,6 +29,7 @@ class ThemeViewController: UIViewController, UISplitViewControllerDelegate {
         if let theme = sender.currentTitle {
             if lastGame != nil {
                 lastGame?.resetTheme(ConcentrationViewController.GameData.Theme.getTheme(theme))
+                // for big screen if we make this splitViewController?.viewControllers.first just like ConventrationVC then it will only show in left side, need to check in detail
                 (splitViewController?.viewControllers.last as? UINavigationController)?.pushViewController(lastGame!, animated: true)
             } else {
                 performSegue(withIdentifier: "Show Game", sender: sender)

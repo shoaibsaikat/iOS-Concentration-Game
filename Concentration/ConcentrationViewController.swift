@@ -86,8 +86,9 @@ class ConcentrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let themeVC = (splitViewController?.viewControllers.first as? UINavigationController)?.children.first as? ThemeViewController {
+        // for small screen splitViewController?.viewControllers.first or last are the same
+        // for big screen splitViewController?.viewControllers.first and last are two different view, last one is newly generated view
+        if let themeVC = (splitViewController?.viewControllers.first as? UINavigationController)?.viewControllers.first as? ThemeViewController {
             // saving currently running game, so that theme can be changed while playing
             themeVC.lastGame = self
         }        
