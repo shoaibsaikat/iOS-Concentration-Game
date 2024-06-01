@@ -86,8 +86,9 @@ class ConcentrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // for small screen splitViewController?.viewControllers.first or last are the same
-        // for big screen splitViewController?.viewControllers.first and last are two different view, last one is newly generated view
+        // for small screen splitViewController?.viewControllers.first or last are the same, because only one VC is visible
+        // for big screen splitViewController has two children as both master and detail VC are shown
+        // here we're getting first child of splitViewController as we're trying to get master page
         if let themeVC = (splitViewController?.viewControllers.first as? UINavigationController)?.viewControllers.first as? ThemeViewController {
             // saving currently running game, so that theme can be changed while playing
             themeVC.lastGame = self
