@@ -32,10 +32,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="eQI-LO-emC">
-                                <rect key="frame" x="155.5" y="84" width="64" height="523"/>
+                                <rect key="frame" x="155.5" y="40" width="64" height="526"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-5C-o0a">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Food"/>
                                         <connections>
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-zl-bHl">
-                                        <rect key="frame" x="0.0" y="97.5" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="98" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Fruit"/>
                                         <connections>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dt-auz">
-                                        <rect key="frame" x="0.0" y="195" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="196" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-83-ls6">
-                                        <rect key="frame" x="0.0" y="292.5" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="294" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Face"/>
                                         <connections>
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaG-OE-Dwe">
-                                        <rect key="frame" x="0.0" y="390" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="392" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Animal"/>
                                         <connections>
@@ -75,7 +75,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZk-XA-oQz">
-                                        <rect key="frame" x="0.0" y="487.5" width="64" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="490" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Vehicle"/>
                                         <connections>
@@ -95,6 +95,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="hYi-R8-IBA"/>
                     <connections>
+                        <outletCollection property="gameOptions" destination="aiU-5C-o0a" collectionClass="NSMutableArray" id="NEi-9p-cTz"/>
+                        <outletCollection property="gameOptions" destination="oeh-zl-bHl" collectionClass="NSMutableArray" id="pDa-bD-nId"/>
+                        <outletCollection property="gameOptions" destination="O49-Dt-auz" collectionClass="NSMutableArray" id="1Fe-Jt-FzB"/>
+                        <outletCollection property="gameOptions" destination="Rpj-83-ls6" collectionClass="NSMutableArray" id="s2H-cF-pbp"/>
+                        <outletCollection property="gameOptions" destination="vaG-OE-Dwe" collectionClass="NSMutableArray" id="2lR-tt-JsU"/>
+                        <outletCollection property="gameOptions" destination="fZk-XA-oQz" collectionClass="NSMutableArray" id="LEB-mj-feL"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show Game" id="a0X-wp-kWB"/>
                     </connections>
                 </viewController>
@@ -384,7 +390,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V2z-xV-U73"/>
+        <segue reference="a0X-wp-kWB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

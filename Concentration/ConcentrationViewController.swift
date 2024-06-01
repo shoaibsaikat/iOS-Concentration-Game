@@ -9,27 +9,38 @@ import UIKit
 
 class ConcentrationViewController: UIViewController {
     override var description: String {
-        return "Current theme: \(theme)"
+        return "Current theme: \(theme?.rawValue as Int?)"
     }
     
     struct GameData {
         enum Theme: Int {
-            case face       = 0
-            case animal     = 1
-            case vehicle    = 2
-            case food       = 3
-            case fruit      = 4
-            case sport      = 5
-            case misc       = 6
+            case Food = 0
+            case Fruit
+            case Sport
+            case Face
+            case Animal
+            case Vehicle
+            
+            static func getTheme(_ theme: String?) -> ConcentrationViewController.GameData.Theme {
+                switch theme {
+                case "Food":    return ConcentrationViewController.GameData.Theme.Food
+                case "Fruit":   return ConcentrationViewController.GameData.Theme.Fruit
+                case "Sport":   return ConcentrationViewController.GameData.Theme.Sport
+                case "Face":    return ConcentrationViewController.GameData.Theme.Face
+                case "Animal":  return ConcentrationViewController.GameData.Theme.Animal
+                case "Vehicle": return ConcentrationViewController.GameData.Theme.Vehicle
+                default:        return ConcentrationViewController.GameData.Theme.Food
+                }
+            }
         }
-        static var emojiBank = [
-            ["🤩", "😍", "😇", "🤓", "😜", "🥵", "🤬", "🥶", "🤯"],
-            ["🐶", "🐮", "🐔", "🐻", "🐋", "🐆", "🦚", "🦢", "🐪"],
-            ["🚗", "🚑", "🚌", "🚅", "🚁", "🚤", "🚀", "🛩", "🚜"],
-            ["🍰", "🍤", "🍩", "🍪", "🥛", "🍫", "🍗", "🍔", "🌮"],
-            ["🍎", "🍒", "🥭", "🍉", "🍋", "🍊", "🍐", "🍍", "🍌"],
-            ["⚽️", "🏀", "🏓", "🏸", "🎾", "🏏", "🏑", "🛹", "🥊"],
-            ["🥁", "🎳", "🥎", "🍇", "🦋", "🌘", "🚚", "📷", "⛈"],
+        
+        static var themeBank = [
+            Theme.Food: ["🍰", "🍤", "🍩", "🍪", "🥛", "🍫", "🍗", "🍔", "🌮"],
+            Theme.Fruit: ["🍎", "🍒", "🥭", "🍉", "🍋", "🍊", "🍐", "🍍", "🍌"],
+            Theme.Sport: ["⚽️", "🏀", "🏓", "🏸", "🎾", "🏏", "🏑", "🛹", "🥊"],
+            Theme.Face: ["🤩", "😍", "😇", "🤓", "😜", "🥵", "🤬", "🥶", "🤯"],
+            Theme.Animal: ["🐶", "🐮", "🐔", "🐻", "🐋", "🐆", "🦚", "🦢", "🐪"],
+            Theme.Vehicle: ["🚗", "🚑", "🚌", "🚅", "🚁", "🚤", "🚀", "🛩", "🚜"],
         ]
     }
     
@@ -53,16 +64,16 @@ class ConcentrationViewController: UIViewController {
         countLabel.attributedText = NSAttributedString(string: "Score: \(gameScore)", attributes: attributes)
     }
     
-    func startNewGame(withTheme theme: Int) {
+    func startNewGame(withTheme theme: GameData.Theme?) {
         self.theme = theme
         game = Concentration(cardPair: cardPairs)
-        emojis = GameData.emojiBank[theme]
+        emojis = GameData.themeBank[theme!] ?? GameData.themeBank[GameData.Theme.Food]
         emoji = [Card: String]()
         updateCard()
     }
     
     @IBAction func newGameButton(_ sender: UIButton) {
-        startNewGame(withTheme: GameData.emojiBank.count.random)
+        startNewGame(withTheme: GameData.themeBank.randomElement()?.key)
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -75,6 +86,11 @@ class ConcentrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let themeVC = (splitViewController?.viewControllers.first as? UINavigationController)?.children.first as? ThemeViewController {
+            // saving currently running game, so that theme can be changed while playing
+            themeVC.lastGame = self
+        }        
     }
 
     @IBAction private func touchCard(_ sender: UIButton) {
@@ -116,24 +132,24 @@ class ConcentrationViewController: UIViewController {
         return true
     }
     
-    func resetTheme(_ theme: Int) {
+    func resetTheme(_ theme: GameData.Theme) {
         if gameEnded {
             startNewGame(withTheme: theme)
         } else {
             self.theme = theme
-            emojis = GameData.emojiBank[theme]
+            emojis = GameData.themeBank[theme]
             emoji = [Card: String]()
             updateCard()
         }
     }
     
-    var theme: Int = GameData.emojiBank.count.random
+    var theme = GameData.themeBank.randomElement()?.key
     private var emoji = [Card: String]()
-    lazy private var emojis = GameData.emojiBank[theme]
+    lazy private var emojis = GameData.themeBank[theme!] ?? GameData.themeBank[GameData.Theme.Food]
 
     private func emoji(for card: Card) -> String {
-        if emoji[card] == nil, emojis.count > 0 {
-            emoji[card] = emojis.remove(at: emojis.count.random)
+        if emoji[card] == nil, (emojis?.count)! > 0 {
+            emoji[card] = emojis?.remove(at: (emojis?.count.random)!)
         }
         return emoji[card] ?? "?"
     }

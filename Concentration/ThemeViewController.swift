@@ -8,64 +8,38 @@
 import UIKit
 
 class ThemeViewController: UIViewController, UISplitViewControllerDelegate {
-    // making this strong will retain previous game but makes game unresonsive, to fix it SplitViewController delegate must be set (for iphone)
-    private var lastGame: ConcentrationViewController?
-    private var gameNavigationController: UINavigationController? {
-        return splitViewController?.viewControllers.last as? UINavigationController
-    }
-    private var gameViewController: ConcentrationViewController? {
-        return gameNavigationController?.viewControllers.last as? ConcentrationViewController
-    }
+    // making this strong will retain previous game
+    var lastGame: ConcentrationViewController?
     
     // this do not work if SplitViewController is set double column (by default), fixed by setting it unspecified from storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
         splitViewController?.delegate = self
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if lastGame != nil {
-            return false
-        }
+        // in master detail page by default default page is shown
+        // for small screen iPhone we're showing master page
+        // but for big screen i.e. iPads side by side view is shown and this will have no effect
         return true
     }
 
+    @IBOutlet var gameOptions: [UIButton]!
     @IBAction func changeTheme(_ sender: UIButton) {
         if let theme = sender.currentTitle {
-            // we already know the running game
-            if let game = gameViewController {
-                // for ipad or big screen iphone, master page will be hidded but present, so no need to check for last game
-                game.resetTheme(getTheme(theme))
-            } else if lastGame != nil {
-                // for small screen iphones, we need the last game if view is changed while playing because master view is not present
-                lastGame?.resetTheme(getTheme(theme))
-                gameNavigationController?.pushViewController(lastGame!, animated: true)
+            if lastGame != nil {
+                lastGame?.resetTheme(ConcentrationViewController.GameData.Theme.getTheme(theme))
+                (splitViewController?.viewControllers.last as? UINavigationController)?.pushViewController(lastGame!, animated: true)
             } else {
                 performSegue(withIdentifier: "Show Game", sender: sender)
             }
         }
     }
     
-    func getTheme(_ theme: String) -> Int {
-        switch theme {
-        case "Food":    return ConcentrationViewController.GameData.Theme.food.rawValue
-        case "Fruit":   return ConcentrationViewController.GameData.Theme.fruit.rawValue
-        case "Sport":   return ConcentrationViewController.GameData.Theme.sport.rawValue
-        case "Face":    return ConcentrationViewController.GameData.Theme.face.rawValue
-        case "Animal":  return ConcentrationViewController.GameData.Theme.animal.rawValue
-        case "Vehicle": return ConcentrationViewController.GameData.Theme.vehicle.rawValue
-        default:        return ConcentrationViewController.GameData.emojiBank.count.random
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Show Game", let game = segue.destination as? ConcentrationViewController, let theme = (sender as? UIButton)?.currentTitle {
-            lastGame = game
-            game.theme = getTheme(theme)
+        let game = segue.destination as? ConcentrationViewController
+        if segue.identifier == "Show Game", let theme = (sender as? UIButton)?.currentTitle, game != nil {
+            game?.theme = ConcentrationViewController.GameData.Theme.getTheme(theme)
         }
     }
 }
