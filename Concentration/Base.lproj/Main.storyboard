@@ -347,7 +347,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="35K-ZF-8kG">
                                         <rect key="frame" x="0.0" y="501.66666666666657" width="377" height="117.33333333333331"/>
@@ -418,8 +417,12 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="84Q-U5-BnT"/>
+                                <exclude reference="EY3-wo-lOo"/>
                                 <exclude reference="qeH-4F-eCA"/>
                                 <exclude reference="xfu-aX-RqV"/>
+                                <exclude reference="E83-oO-nR4"/>
+                                <exclude reference="xZL-IN-nZ5"/>
+                                <exclude reference="JkW-W8-xOp"/>
                                 <exclude reference="WDF-xu-Tho"/>
                                 <exclude reference="acx-By-Msw"/>
                             </mask>
@@ -433,7 +436,11 @@
                         <variation key="heightClass=regular">
                             <mask key="constraints">
                                 <include reference="84Q-U5-BnT"/>
+                                <include reference="EY3-wo-lOo"/>
                                 <include reference="qeH-4F-eCA"/>
+                                <include reference="E83-oO-nR4"/>
+                                <include reference="xZL-IN-nZ5"/>
+                                <include reference="JkW-W8-xOp"/>
                                 <include reference="WDF-xu-Tho"/>
                             </mask>
                         </variation>
