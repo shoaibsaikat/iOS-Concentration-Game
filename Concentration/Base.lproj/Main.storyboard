@@ -454,7 +454,9 @@
                                 <exclude reference="84Q-U5-BnT"/>
                                 <exclude reference="mlY-C3-THG"/>
                                 <exclude reference="qeH-4F-eCA"/>
+                                <exclude reference="0pJ-KW-C51"/>
                                 <exclude reference="NnN-K4-FTA"/>
+                                <exclude reference="bPT-Sq-EUt"/>
                                 <exclude reference="WDF-xu-Tho"/>
                             </mask>
                         </variation>
@@ -463,7 +465,9 @@
                                 <include reference="84Q-U5-BnT"/>
                                 <include reference="mlY-C3-THG"/>
                                 <include reference="qeH-4F-eCA"/>
+                                <include reference="0pJ-KW-C51"/>
                                 <include reference="NnN-K4-FTA"/>
+                                <include reference="bPT-Sq-EUt"/>
                                 <include reference="WDF-xu-Tho"/>
                             </mask>
                         </variation>
