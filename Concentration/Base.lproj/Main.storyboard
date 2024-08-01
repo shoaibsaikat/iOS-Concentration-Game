@@ -159,7 +159,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vPe-zb-Wzb">
-                                <rect key="frame" x="8" y="112" width="377" height="304"/>
+                                <rect key="frame" x="8" y="111" width="377" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-yt-ir5">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="304"/>
@@ -363,31 +363,15 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Sib-zg-GOp" firstAttribute="width" secondItem="McM-ba-Ztp" secondAttribute="width" id="I2O-VJ-AKU"/>
-                                            <constraint firstItem="X6t-Ed-X7h" firstAttribute="width" secondItem="McM-ba-Ztp" secondAttribute="width" id="IUb-5k-id5"/>
-                                            <constraint firstItem="X6t-Ed-X7h" firstAttribute="height" secondItem="McM-ba-Ztp" secondAttribute="height" id="Mc3-ko-czc"/>
                                             <constraint firstItem="Sib-zg-GOp" firstAttribute="width" secondItem="McM-ba-Ztp" secondAttribute="width" id="Y2b-HV-GLf"/>
                                             <constraint firstItem="0It-A2-JQZ" firstAttribute="width" secondItem="McM-ba-Ztp" secondAttribute="width" id="gLD-wZ-Sdg"/>
-                                            <constraint firstItem="Sib-zg-GOp" firstAttribute="height" secondItem="McM-ba-Ztp" secondAttribute="height" id="ppa-0u-ycq"/>
                                             <constraint firstItem="X6t-Ed-X7h" firstAttribute="width" secondItem="McM-ba-Ztp" secondAttribute="width" id="u6A-EO-Wcj"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="I2O-VJ-AKU"/>
                                                 <exclude reference="Y2b-HV-GLf"/>
-                                                <exclude reference="ppa-0u-ycq"/>
-                                                <exclude reference="IUb-5k-id5"/>
-                                                <exclude reference="Mc3-ko-czc"/>
                                                 <exclude reference="u6A-EO-Wcj"/>
                                                 <exclude reference="gLD-wZ-Sdg"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="I2O-VJ-AKU"/>
-                                                <include reference="ppa-0u-ycq"/>
-                                                <include reference="IUb-5k-id5"/>
-                                                <include reference="Mc3-ko-czc"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular">
@@ -457,44 +441,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OAm-b8-AJL" firstAttribute="leading" secondItem="vPe-zb-Wzb" secondAttribute="trailing" constant="8" id="1QT-6R-rvJ"/>
-                            <constraint firstItem="OAm-b8-AJL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2j4-Mt-mAA"/>
+                            <constraint firstItem="vPe-zb-Wzb" firstAttribute="leading" secondItem="OAm-b8-AJL" secondAttribute="trailing" constant="-377" id="0pJ-KW-C51"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OAm-b8-AJL" secondAttribute="bottom" id="84Q-U5-BnT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vPe-zb-Wzb" secondAttribute="bottom" constant="8" id="JVi-hU-xh6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="vPe-zb-Wzb" secondAttribute="top" constant="83" id="MXh-CT-Es8"/>
-                            <constraint firstItem="vPe-zb-Wzb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="MkZ-ZQ-rNU"/>
-                            <constraint firstItem="vPe-zb-Wzb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="NhU-gl-sa1"/>
                             <constraint firstItem="vPe-zb-Wzb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="NnN-K4-FTA"/>
-                            <constraint firstItem="OAm-b8-AJL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vPe-zb-Wzb" secondAttribute="bottom" constant="8" id="QFD-sl-wjm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OAm-b8-AJL" secondAttribute="trailing" constant="20" id="RJW-sG-MLx"/>
                             <constraint firstItem="OAm-b8-AJL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WDF-xu-Tho"/>
+                            <constraint firstItem="vPe-zb-Wzb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bPT-Sq-EUt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vPe-zb-Wzb" secondAttribute="trailing" constant="8" id="mlY-C3-THG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OAm-b8-AJL" secondAttribute="trailing" constant="8" id="qeH-4F-eCA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="84Q-U5-BnT"/>
-                                <exclude reference="JVi-hU-xh6"/>
-                                <exclude reference="MXh-CT-Es8"/>
-                                <exclude reference="RJW-sG-MLx"/>
                                 <exclude reference="mlY-C3-THG"/>
                                 <exclude reference="qeH-4F-eCA"/>
-                                <exclude reference="MkZ-ZQ-rNU"/>
                                 <exclude reference="NnN-K4-FTA"/>
-                                <exclude reference="1QT-6R-rvJ"/>
-                                <exclude reference="2j4-Mt-mAA"/>
-                                <exclude reference="QFD-sl-wjm"/>
                                 <exclude reference="WDF-xu-Tho"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="JVi-hU-xh6"/>
-                                <include reference="MXh-CT-Es8"/>
-                                <include reference="RJW-sG-MLx"/>
-                                <include reference="MkZ-ZQ-rNU"/>
-                                <include reference="1QT-6R-rvJ"/>
-                                <include reference="2j4-Mt-mAA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -503,7 +464,6 @@
                                 <include reference="mlY-C3-THG"/>
                                 <include reference="qeH-4F-eCA"/>
                                 <include reference="NnN-K4-FTA"/>
-                                <include reference="QFD-sl-wjm"/>
                                 <include reference="WDF-xu-Tho"/>
                             </mask>
                         </variation>
