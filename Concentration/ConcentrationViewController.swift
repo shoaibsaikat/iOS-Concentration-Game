@@ -94,6 +94,13 @@ class ConcentrationViewController: UIViewController {
             themeVC.lastGame = self
         }        
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .oneOverSecondary {
+            splitViewController?.preferredDisplayMode = .oneOverSecondary
+        }
+    }
 
     @IBAction private func touchCard(_ sender: UIButton) {
         if let index = cardButtons.lastIndex(of: sender) {
